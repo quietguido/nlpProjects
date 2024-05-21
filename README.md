@@ -47,8 +47,11 @@ F1 Score: 0.538538.
 <img width="924" alt="Screenshot 2024-05-21 at 18 17 53" src="https://github.com/quietguido/nlpProjects/assets/158144248/96a1cd7e-3e7e-4be4-b5ef-7003f4372684">
 
 Test Case:
+
 True Genre: romance
+
 Predicted Genre: drama
+
 Plot: Mia Hall and her family are getting ready to go on with their normal day activities when it is announced on the radio that school has been canceled. Mia's dad Denny is a teacher and as a result of the snow day does not have to go to work. It is also revealed that Mia is dating an older, popular up-and-coming rockstar named Adam Wilde.
 
 
