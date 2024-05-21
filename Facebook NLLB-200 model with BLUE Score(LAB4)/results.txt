@@ -1,0 +1,150 @@
+MODEL FACEBOOK/NLLB200
+TABLE OF CONTENT
+1) RUS TO ANY on dataset FLORES(RUS)
+2) ENG TO ANY on dataset FLORES(ENG)
+3) RUS TO ENG on dataset FLORES(RUS)
+    3.1) WITH BATCH 16 SENTENCES
+    3.2) WITH BATCH 8 SENTENCES
+    3.3) WITH BATCH 1 SENTENCES
+4) ENG TO RUS on dataset FLORES(ENG)
+    4.1) WITH BATCH 8 SENTENCES
+    4.2) WITH BATCH 1 SENTENCES
+5) ENG TO RUS CUSTOM TEXT BASED ON NEWS AND FICTION
+6) RUS TO ENG CUSTOM TEXT BASED ON NEWS AND FICTION
+
+MODEL Helsinki-NLP/opus-mt-en-ru or Helsinki-NLP/opus-mt-ru-en
+7) ENG TO RUS CUSTOM TEXT BASED ON NEWS AND FICTION
+8) RUS TO ENG CUSTOM TEXT BASED ON NEWS AND FICTION
+9) RUS TO ENG on dataset FLORES(RUS)
+10) ENG TO RUS on dataset FLORES(ENG)
+11) ENG TO RUS by GOOGLE TRANSLATE on custom dataset TEXT BASED ON NEWS AND FICTION
+12) ENG TO RUS by YANDEX TRANSLATE on custom dataset TEXT BASED ON NEWS AND FICTION
+
+
+
+
+1) and 2) 
+model_name = "facebook/nllb-200-distilled-600M"
+
+test_on_model("rus_Cyrl")
+test_on_model("eng_Latn")
+
+model used translate RUSSIAN or ENGLISH to best posible language to translate
+based on the model it self showed 
+
+'''
+on RUSSIAN to ANY language
+Average BLEU score: 9.184349219470679
+
+Best 10 BLEU Scores:
+BLEU score: 100.00000000000004, Original: По словам Мика О'Флинна, исполняющего обязанности , Translated: По словам Мика О'Флинна, исполняющего обязанности 
+BLEU score: 100.00000000000004, Original: NHK также сообщила, что АЭС Касивазаки Карива, рас, Translated: NHK также сообщила, что АЭС Касивазаки Карива, рас
+BLEU score: 100.00000000000004, Original: Полиция штата Мадхья-Прадеш вернула украденные ноу, Translated: Полиция штата Мадхья-Прадеш вернула украденные ноу
+BLEU score: 100.00000000000004, Original: Рок-группа должна была гастролировать по США и Кан, Translated: Рок-группа должна была гастролировать по США и Кан
+BLEU score: 100.00000000000004, Original: Он получил образование акушера-гинеколога и начал , Translated: Он получил образование акушера-гинеколога и начал 
+BLEU score: 100.00000000000004, Original: Созерцание цветения сакуры, называемое "ханами", в, Translated: Созерцание цветения сакуры, называемое "ханами", в
+BLEU score: 100.00000000000004, Original: Фотограф был доставлен в медицинский центр имени Р, Translated: Фотограф был доставлен в медицинский центр имени Р
+BLEU score: 100.00000000000004, Original: Большинство отдельных балтийских круизов включают , Translated: Большинство отдельных балтийских круизов включают 
+BLEU score: 100.00000000000004, Original: Произношение в итальянском языке относительно прос, Translated: Произношение в итальянском языке относительно прос
+BLEU score: 100.00000000000004, Original: В 1960-х гг. Бжезинский занимал должность советник, Translated: В 1960-х гг. Бжезинский занимал должность советник
+
+Worst 10 BLEU Scores:
+BLEU score: 0.0, Original: Если вы обнаружите, что переустанавливаете будильн, Translated: Dacă afli că reinstalaţi zgomotul în somn, îl pute
+BLEU score: 0.0, Original: Тибетский буддизм основан на учениях Будды, но был, Translated: Το Θιβετιανό Βουδισμό βασίστηκε στις διδασκαλίες τ
+BLEU score: 0.0, Original: Принцип тибетского буддизма очень прост. Он состои, Translated: مبدأ البوذية التبتية بسيط جدا. يتكون من اليوغا وال
+BLEU score: 0.0, Original: Энергия кундалини (энергия просветления) в кундали, Translated: कुंडलिनी-योग में ऊर्जा योग, श्वसन व्यायाम, मंत्र औ
+BLEU score: 0.0, Original: Сердцем тибетской медитации считается Йога Божеств, Translated: तिब्बती ध्यान का केंद्र योग देवता माना जाता है। वि
+BLEU score: 0.0, Original: В саванне приматам с такой пищеварительной системо, Translated: Dans un système digestif comme celui de l'homme, i
+BLEU score: 0.0, Original: Более того, невыполнение этого приведёт к таким се, Translated: De plus, le non-respect de ces règles entraînera d
+BLEU score: 0.0, Original: Наиболее доступными растительными ресурсами были б, Translated: Les plus accessibles ressources végétales seraient
+BLEU score: 0.0, Original: Напротив, еда животного происхождения (муравьи, те, Translated: En revanche, la nourriture d'origine animale (mura
+BLEU score: 0.0, Original: Принимая во внимание все вышесказанное, не стоит у, Translated: In die lig van al die bogenoemde, is dit nie verba
+
+
+on ENGLISH to any language
+Average BLEU score: 0.7722331390226777
+
+Best 10 BLEU Scores:
+BLEU score: 8.854416306086701, Original: During the struggle for independence organised by , Translated: Pendant la lutte pour l'indépendance organisée par
+BLEU score: 9.092735920162841, Original: The Giza Plateau, or "Giza Necropolis" in the Egyp, Translated: တီႈၼိူဝ်လိၼ် Giza Plateau ဢမ်ႇၼၼ် "Giza Necropolis
+BLEU score: 9.14462689237287, Original: Scotturb Bus 403 travels regularly to Sintra, stop, Translated: L'autobus 403 di Scotturb viaggia regolarmente a S
+BLEU score: 9.53295972797249, Original: Their thermal behavior is not as steady as large c, Translated: Hulle termiese gedrag is nie so stabiel soos groot
+BLEU score: 10.640850690356462, Original: Hokuriku Electric Power Co. reported no effects fr, Translated: Hokuriku Electric Power Co. informó que no hubo ef
+BLEU score: 10.727295782787309, Original: Current senator and Argentine First Lady Cristina , Translated: Nanambara ny kandidà filoham-pirenena azy ny senat
+BLEU score: 12.673718536830808, Original: For example, “learning” and “socialization” are su, Translated: Zum Beispiel werden learning und socialization als
+BLEU score: 12.673718536830808, Original: During the 1980s he worked on shows such as Taxi, , Translated: Au cours des années 1980, il a travaillé sur des é
+BLEU score: 20.105373454060025, Original: The photographer was transported to Ronald Reagan , Translated: Le photographe a été transporté au Ronald Reagan U
+BLEU score: 33.16186519505936, Original: Two popular content theories are Maslow's Hierarch, Translated: သွင်ၶေႃႈႁၼ်ထိုင်ဢၼ်ၸိုဝ်ႈသဵင်ယႂ်ႇၶွင်လွင်ႈၵမ်ႉထႅမ်
+
+Worst 10 BLEU Scores:
+BLEU score: 0.0, Original: Such things have become separate disciplines, whic, Translated: လွင်ႈၸိူဝ်းၼႆႉ ပဵၼ်မႃး လွင်ႈပၵ်းပိူင်ဢၼ်ၽၢတ်ႇဢွၵ်ႇ
+BLEU score: 0.0, Original: The mob of people forced the King And Queen to hav, Translated: Multimea de oameni i-a forţat pe rege şi regină să
+BLEU score: 0.0, Original: At one point a member of the mob waved the head of, Translated: Σε ένα σημείο, ένα μέλος του πλήθους κουνιόταν το 
+BLEU score: 0.0, Original: The war expenditures of U.S. imperialism in the co, Translated: As despesas de guerra do imperialismo americano na
+BLEU score: 0.0, Original: Of course, the superprofits derived from the protr, Translated: Φυσικά, τα υπερκεράσματα που προέρχονται από την π
+BLEU score: 0.0, Original: To understand the Templars one must understand the, Translated: Para entender a los Templarios uno debe entender e
+BLEU score: 0.0, Original: Up means you should start at the tip and push the , Translated: arriba significa que debes comenzar en la punta y 
+BLEU score: 0.0, Original: All these things and more highlight Ontario as wha, Translated: Toutes ces choses et bien d'autres mettent en évid
+BLEU score: 0.0, Original: Large areas further north are quite sparsely popul, Translated: De vastes régions plus au nord sont assez peu peup
+BLEU score: 0.0, Original: Examples include control, planning and scheduling,, Translated: Beispiele sind Kontrolle, Planung und Planung, die
+'''
+
+3) RUS TO ENG
+test_on_model("rus_Cyrl", "eng_Latn")
+
+#BLEU score: 1.1066054642980447
+#for batch of 1
+
+#BLEU score: 1.1066054642980447
+#for batch of 8
+
+#BLEU score: 1.1066054642980447
+#for batch of 16
+
+4) ENG TO RUS
+test_on_model("eng_Latn", "rus_Cyrl")
+
+#BLEU score: 1.1727149651056463
+#fror batch of 8
+
+#BLEU score: 1.1727149651056463
+#fror batch of 1
+
+5) ENG TO RUS CUSTOM TEXT BASED ON NEWS AND FICTION
+test_on_plain_text(english_text, "eng_Latn", "rus_Cyrl")
+#BLEU score: 0.14045551207209941
+
+
+6) RUS TO ENG CUSTOM TEXT BASED ON NEWS AND FICTION
+test_on_plain_text(russian_text, "rus_Cyrl", "eng_Latn")
+#BLEU score: 0.17505992174628696
+
+
+MODEL Helsinki-NLP/opus-mt-en-ru or Helsinki-NLP/opus-mt-ru-en
+7) ENG TO RUS CUSTOM TEXT BASED ON NEWS AND FICTION
+#BLEU score: 0.10574993974397515
+
+8) RUS TO ENG CUSTOM TEXT BASED ON NEWS AND FICTION
+#BLEU score: 0.2820121312002901
+
+9) RUS TO ENG on dataset FLORES(RUS)
+
+# Test the function with FLORES dataset for Russian to English translation
+test_on_flores_dataset("rus_Cyrl", "eng_Latn", "Russian", "English")
+
+#BLEU score for Russian to English: 5.816635421147515
+
+10) ENG TO RUS on dataset FLORES(ENG)
+
+# Test the function with FLORES dataset for English to Russian translation
+test_on_flores_dataset("eng_Latn", "rus_Cyrl", "English", "Russian")
+#BLEU score for English to Russian: 5.809665204409192
+
+
+11) ENG TO RUS by GOOGLE TRANSLATE on custom dataset TEXT BASED ON NEWS AND FICTION
+
+# BLEU score using Google Translate: 0.1209268439353369
+
+12) ENG TO RUS by YANDEX TRANSLATE on custom dataset TEXT BASED ON NEWS AND FICTION
+
+# BLEU score using Yandex Free Translate: 0.11069375909194523
