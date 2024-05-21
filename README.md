@@ -38,15 +38,21 @@ METHODS: BALANCING GENRE REPRESENTATION
 To prevent the model from being biased towards genres with a high number of entries, we focused on genres with a minimum number of instances. Test showed that in terms of training time and accuracy genres with minimum 200 films was proper choice for training, but we only considered maximum of 500 films from each genre.
 
 Number of Rows in the dataset: 34886
+
 Number of Uniqe genres in dataset before normalization: 2265
+
 after number dropped to around 1119.
+
 Average plot lenght: 490.56
+
 Filter of origin as British and American: Main reasoning of this choice was to limit choices to the most popular ones.
 
 MODEL SELECTION AND TRAINING:
+
 Utilizing the pre-trained BERT model (bert-base-cased) for genre classification. The model is fine-tuned on the prepared movie plot and genre data. Training parameters are set to optimize performance within a limited time frame.
 
 RESULTS:
+
 F1 Score: 0.538538.
 
 <img width="924" alt="Screenshot 2024-05-21 at 18 17 53" src="https://github.com/quietguido/nlpProjects/assets/158144248/96a1cd7e-3e7e-4be4-b5ef-7003f4372684">
