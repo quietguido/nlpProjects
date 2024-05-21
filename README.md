@@ -2,16 +2,20 @@ Presentation: [11_12.pdf](https://github.com/quietguido/nlpProjects/files/153902
 
 GENRE PREDICTION FROM WIKIPEDIA MOVIE PLOTS
 
-TASK DESCRIPTION: 
+TASK DESCRIPTION:
+
 This research explores the possibility of using the BERT transformer model to predict movie genres based on their plot summaries extracted from Wikipedia.
 
 Data Preprocessing: 
+
 Cleaning and normalizing the movie plot data from the Wikipedia movie plots dataset. This includes filtering out irrelevant genres. 
 
 Model Selection and Training: 
+
 Utilizing the pre-trained BERT model (bert-base-cased) for genre classification. The model is fine-tuned on the prepared movie plot and genre data.
 
 Evaluation:
+
 Assessing the model's performance through metrics like F1 score and confusion matrix visualization.
 
 DATASET:
@@ -26,6 +30,7 @@ Cleaning the Plot Summaries for Genre Prediction.
 The initial step of our research involved cleaning and normalizing the movie plot data obtained from the Wikipedia movie plots dataset. This crucial moment ensured the quality and proper format of the data for training our genre prediction model. 
 
 Key data pre-processing step were:
+
 <img width="1193" alt="Screenshot 2024-05-21 at 18 15 14" src="https://github.com/quietguido/nlpProjects/assets/158144248/417c483f-155d-4abe-93f0-5e88aafbf147">
 
 METHODS: BALANCING GENRE REPRESENTATION
